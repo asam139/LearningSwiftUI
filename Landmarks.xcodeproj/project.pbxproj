@@ -18,6 +18,8 @@
 		42450FEC22AEBFEA00DD40D0 /* HikeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42450FEB22AEBFEA00DD40D0 /* HikeGraph.swift */; };
 		42450FEE22AEC00400DD40D0 /* GraphCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42450FED22AEC00400DD40D0 /* GraphCapsule.swift */; };
 		42450FF022AEC06600DD40D0 /* hikeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 42450FEF22AEC06600DD40D0 /* hikeData.json */; };
+		42450FF322AEC82700DD40D0 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42450FF222AEC82700DD40D0 /* Home.swift */; };
+		42450FF522AEC96700DD40D0 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42450FF422AEC96700DD40D0 /* CategoryRow.swift */; };
 		4284496922A8520B005B62A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4284496822A8520B005B62A5 /* AppDelegate.swift */; };
 		4284496B22A8520B005B62A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4284496A22A8520B005B62A5 /* SceneDelegate.swift */; };
 		4284496F22A8520C005B62A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4284496E22A8520C005B62A5 /* Assets.xcassets */; };
@@ -77,6 +79,8 @@
 		42450FEB22AEBFEA00DD40D0 /* HikeGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikeGraph.swift; sourceTree = "<group>"; };
 		42450FED22AEC00400DD40D0 /* GraphCapsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphCapsule.swift; sourceTree = "<group>"; };
 		42450FEF22AEC06600DD40D0 /* hikeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hikeData.json; sourceTree = "<group>"; };
+		42450FF222AEC82700DD40D0 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		42450FF422AEC96700DD40D0 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		4284496522A8520B005B62A5 /* Landmarks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landmarks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4284496822A8520B005B62A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4284496A22A8520B005B62A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 				42450FEB22AEBFEA00DD40D0 /* HikeGraph.swift */,
 				4284499822A8541D005B62A5 /* CircleImage.swift */,
 				4284499A22A854AE005B62A5 /* MapView.swift */,
+				42450FF422AEC96700DD40D0 /* CategoryRow.swift */,
+				428449BE22A97F59005B62A5 /* LandmarkRow.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -249,9 +255,9 @@
 		428449A222A97EE0005B62A5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				428449BE22A97F59005B62A5 /* LandmarkRow.swift */,
 				428449C022A9803A005B62A5 /* LandmarkList.swift */,
 				4284496C22A8520B005B62A5 /* LandmarkDetail.swift */,
+				42450FF222AEC82700DD40D0 /* Home.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42450FF522AEC96700DD40D0 /* CategoryRow.swift in Sources */,
 				42450FEE22AEC00400DD40D0 /* GraphCapsule.swift in Sources */,
 				42450FE922AEBF8000DD40D0 /* Hike.swift in Sources */,
 				42450FDC22AEBA0B00DD40D0 /* HexagonParameters.swift in Sources */,
@@ -435,6 +442,7 @@
 				428449C222A9848C005B62A5 /* LandmarkDetail.swift in Sources */,
 				42450FE022AEBC5C00DD40D0 /* BadgeSymbol.swift in Sources */,
 				42450FE222AEBCCE00DD40D0 /* RotatedBadgeSymbol.swift in Sources */,
+				42450FF322AEC82700DD40D0 /* Home.swift in Sources */,
 				42450FEA22AEBF8000DD40D0 /* HikeDetail.swift in Sources */,
 				428449C122A9803A005B62A5 /* LandmarkList.swift in Sources */,
 				42450FDE22AEBBF600DD40D0 /* BadgeBackground.swift in Sources */,
