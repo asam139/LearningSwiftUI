@@ -22,7 +22,11 @@ struct CategoryRow : View {
             ScrollView(showsHorizontalIndicator: false) {
                 HStack(alignment: .top, spacing: 0) {
                     ForEach(self.items) { landmark in
-                        CategoryItem(landmark: landmark)
+                        NavigationButton(destination:
+                            LandmarkDetail(landmark: landmark)
+                        ){
+                            CategoryItem(landmark: landmark)
+                        }
                     }
                 }
                 }
@@ -37,8 +41,10 @@ struct CategoryItem: View {
         VStack(alignment: .leading) {
             landmark
                 .image(forSize: 155)
+                .renderingMode(.original)
                 .cornerRadius(5)
             Text(landmark.name)
+                .color(.primary)
                 .font(.caption)
             }
             .padding(.leading, 15)
