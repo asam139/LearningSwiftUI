@@ -12,6 +12,7 @@ import UIKit
 import SwiftUI
 
 let landmarkData: [Landmark] = load("landmarkData.json")
+let features = landmarkData.filter { $0.isFeatured }
 let hikeData: [Hike] = load("hikeData.json")
 
 func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
@@ -55,9 +56,7 @@ final class ImageStore {
         return Image(sizedImage, scale: Length(ImageStore.scale), label: Text(verbatim: name))
     }
     
-    fileprivate func _guaranteeInitialImage(name: String) -> _ImageDictionary.Index {
-        if let index = images.index(forKey: name) { return index }
-        
+    static func loadImage(name: String) -> CGImage {
         guard
             let url = Bundle.main.url(forResource: name, withExtension: "jpg"),
             let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil),
@@ -65,7 +64,13 @@ final class ImageStore {
             else {
                 fatalError("Couldn't load image \(name).jpg from main bundle.")
         }
+        return image
+    }
+    
+    fileprivate func _guaranteeInitialImage(name: String) -> _ImageDictionary.Index {
+        if let index = images.index(forKey: name) { return index }
         
+        let image = ImageStore.loadImage(name: name)
         images[name] = [ImageStore.originalSize: image]
         return images.index(forKey: name)!
     }
