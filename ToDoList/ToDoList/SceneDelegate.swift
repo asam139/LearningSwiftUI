@@ -2,12 +2,13 @@
 //  SceneDelegate.swift
 //  ToDoList
 //
-//  Created by Saul Moreno Abril on 20/08/2019.
+//  Created by Saul Moreno Abril on 21/08/2019.
 //  Copyright © 2019 Saul Moreno Abril. All rights reserved.
 //
 
 import UIKit
 import SwiftUI
+import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,9 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
+        let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let contentView = ContentView().environment(\.managedObjectContext, moc)
+
         // Use a UIHostingController as window root view controller
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UIHostingController(rootView: ContentView())
+        window.rootViewController = UIHostingController(rootView: contentView)
         self.window = window
         window.makeKeyAndVisible()
     }
