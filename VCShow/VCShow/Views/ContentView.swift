@@ -10,7 +10,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello World")
+        VStack {
+            Text("Hello World").font(.title)
+            Text("Video Content").font(.subheadline)
+            Divider()
+            NavigationLink(destination: ChannelView()){
+                Text("Add Channel")
+            }
+            Button(action: {
+                
+            }) {
+                Text("Add New Idea")
+            }
+            Spacer()
+        }
+        .padding()
+        .navigationBarTitle("Channel Name")
     }
 }
 

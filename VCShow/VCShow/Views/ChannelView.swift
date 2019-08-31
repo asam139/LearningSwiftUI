@@ -9,8 +9,24 @@
 import SwiftUI
 
 struct ChannelView: View {
+
+    @State private var channelName = "My Channel"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack(alignment: .leading) {
+                TextField("Channel Name", text: $channelName)
+                Divider()
+                Button(action: {
+                    
+                }) {
+                    Text("Dismiss this VC")
+                }
+                Spacer()
+            }
+            .padding()
+            .navigationBarTitle("Channel Data")
+        }
     }
 }
 

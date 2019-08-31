@@ -9,8 +9,26 @@
 import SwiftUI
 
 struct SecondView: View {
+    
+    @State private var videoTitle = "Great Title"
+    @State private var videoContent = "Great Content"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack(alignment: .leading) {
+                TextField("Video title", text: $videoTitle)
+                TextField("Video Content", text: $videoContent)
+                Divider()
+                Button(action: {
+                    
+                }) {
+                    Text("Dismiss this VC")
+                }
+                Spacer()
+            }
+            .padding()
+            .navigationBarTitle("Video")
+        }
     }
 }
 
