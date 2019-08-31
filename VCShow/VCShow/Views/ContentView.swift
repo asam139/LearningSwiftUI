@@ -14,6 +14,8 @@ struct ContentView: View {
     
     @ObservedObject var videoIdea = VideoIdea()
     
+    @EnvironmentObject var channelData: ChannelData
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
@@ -32,11 +34,12 @@ struct ContentView: View {
                 }.sheet(isPresented: $showingSecondVC) {
                     SecondView(videoTitle: self.$videoIdea.title,
                                videoContent: self.$videoIdea.contentIdea)
+                        .environmentObject(self.channelData)
                 }
                 Spacer()
             }
             .padding()
-            .navigationBarTitle("Channel Name")
+            .navigationBarTitle("\(channelData.channelName)")
         }
     }
 }

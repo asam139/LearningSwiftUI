@@ -15,6 +15,8 @@ struct SecondView: View {
     @Binding var videoTitle: String
     @Binding var videoContent: String
     
+    @EnvironmentObject var channelData: ChannelData
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
@@ -29,7 +31,7 @@ struct SecondView: View {
                 Spacer()
             }
             .padding()
-            .navigationBarTitle("Video")
+            .navigationBarTitle("\(channelData.channelName) Video")
         }
     }
 }

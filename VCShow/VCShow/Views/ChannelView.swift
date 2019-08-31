@@ -9,16 +9,17 @@
 import SwiftUI
 
 struct ChannelView: View {
-
-    @State private var channelName = "My Channel"
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var channelData: ChannelData
+
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                TextField("Channel Name", text: $channelName)
+                TextField("Channel Name", text: $channelData.channelName)
                 Divider()
                 Button(action: {
-                    
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Dismiss this VC")
                 }

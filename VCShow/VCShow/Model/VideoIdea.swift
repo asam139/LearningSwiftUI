@@ -9,6 +9,6 @@
 import Combine
 
 final class VideoIdea: ObservableObject {
-    @Published var title: String = ""
-    @Published var contentIdea: String = ""
+    @Published var title: String = "Title"
+    @Published var contentIdea: String = "Content Idea"
 }
