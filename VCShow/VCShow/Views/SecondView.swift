@@ -10,6 +10,8 @@ import SwiftUI
 
 struct SecondView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     @State private var videoTitle = "Great Title"
     @State private var videoContent = "Great Content"
     
@@ -20,7 +22,7 @@ struct SecondView: View {
                 TextField("Video Content", text: $videoContent)
                 Divider()
                 Button(action: {
-                    
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Dismiss this VC")
                 }
