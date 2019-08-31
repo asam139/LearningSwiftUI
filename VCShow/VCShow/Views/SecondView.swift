@@ -12,8 +12,8 @@ struct SecondView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    @State private var videoTitle = "Great Title"
-    @State private var videoContent = "Great Content"
+    @Binding var videoTitle: String
+    @Binding var videoContent: String
     
     var body: some View {
         NavigationView {
@@ -34,8 +34,10 @@ struct SecondView: View {
     }
 }
 
-struct SecondView_Previews: PreviewProvider {
-    static var previews: some View {
-        SecondView()
-    }
-}
+//struct SecondView_Previews: PreviewProvider {
+//    @ObservedObject var videoIdea = VideoIdea()
+//
+//    static var previews: some View {
+//        SecondView(videoTitle: self.$videoIdea.title, videoContent: self.$videoIdea.contentIdea)
+//    }
+//}

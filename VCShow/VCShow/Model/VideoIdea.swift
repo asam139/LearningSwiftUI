@@ -6,8 +6,9 @@
 //  Copyright © 2019 Saul Moreno Abril. All rights reserved.
 //
 
-import Foundation
+import Combine
 
-final class VideoIdea {
-    
+final class VideoIdea: ObservableObject {
+    @Published var title: String = ""
+    @Published var contentIdea: String = ""
 }

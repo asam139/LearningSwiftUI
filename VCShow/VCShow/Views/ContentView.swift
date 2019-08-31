@@ -12,11 +12,15 @@ struct ContentView: View {
     
     @State private var showingSecondVC = false
     
+    @ObservedObject var videoIdea = VideoIdea()
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                Text("Video Title").font(.title)
-                Text("Video Content").font(.subheadline)
+                Text(videoIdea.title)
+                    .font(.title)
+                Text(videoIdea.contentIdea)
+                    .font(.subheadline)
                 Divider()
                 NavigationLink(destination: ChannelView()){
                     Text("Add Channel")
@@ -26,7 +30,8 @@ struct ContentView: View {
                 }) {
                     Text("Add New Idea")
                 }.sheet(isPresented: $showingSecondVC) {
-                    SecondView()
+                    SecondView(videoTitle: self.$videoIdea.title,
+                               videoContent: self.$videoIdea.contentIdea)
                 }
                 Spacer()
             }
