@@ -21,6 +21,7 @@ struct ContentView: View {
             VStack(alignment: .leading) {
                 Text(videoIdea.title)
                     .font(.title)
+                    .foregroundColor(Color.gray)
                 Text(videoIdea.contentIdea)
                     .font(.subheadline)
                 Divider()
